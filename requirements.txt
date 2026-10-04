@@ -1,0 +1,8 @@
+PySide6>=6.7,<7
+numpy>=1.26,<3
+soundcard>=0.4.3,<0.5
+faster-whisper>=1.1,<2
+platformdirs>=4.2,<5
+keyring>=25,<26
+google-genai>=1.0,<2
+python-docx>=1.1,<2

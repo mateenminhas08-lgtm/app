@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-transcript-desktop"
+version = "0.1.0"
+description = "Private Windows system-audio transcription and AI notes desktop app"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = {text = "MIT"}
+authors = [{name = "AI Transcript contributors"}]
+dependencies = [
+  "PySide6>=6.7,<7",
+  "numpy>=1.26,<3",
+  "soundcard>=0.4.3,<0.5",
+  "faster-whisper>=1.1,<2",
+  "platformdirs>=4.2,<5",
+  "keyring>=25,<26",
+  "google-genai>=1.0,<2",
+  "python-docx>=1.1,<2",
+]
+
+[project.scripts]
+ai-transcript = "ai_transcript.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
